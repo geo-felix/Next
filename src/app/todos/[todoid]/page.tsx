@@ -7,7 +7,8 @@ type PageParams ={
     }
 }
 const fetchTodos= async (todoid:string)=>{
-    const res = await fetch("https://jsonplaceholder.typicode.com/todos/${todoid},{next:{revalidate:60}}")
+    const res = await fetch("https://jsonplaceholder.typicode.com/todos/${todoid}",
+     {next:{revalidate:60}})
     const todo : Todo = await res.json();
     return todo
 }
